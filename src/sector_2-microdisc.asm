@@ -53,8 +53,8 @@
 	; Try to find the load address
 	;
 	sei               	; Disable interruptions
-	lda #$00
-	sta $321
+	;lda #$00
+	;sta $321
 	
 	lda #OPCODE_RTS
 	sta $00          	; Write in $00 Page => take one less byte
@@ -101,21 +101,21 @@ _BEGIN_
 	; Switch to HIRES
 	;
 
-	ldy #39 			; From $9900 to $c000 is 39 pages (9984 bytes)
-	lda #0
-loop_hires_outer	
-	tax
-loop_hires_inner
-__auto_hires
-	sta $9900,x
-	inx
-	bne loop_hires_inner
-	inc __auto_hires+2
-	dey
-	bne loop_hires_outer
+	;ldy #39 			; From $9900 to $c000 is 39 pages (9984 bytes)
+	;lda #0
+;loop_hires_outer	
+	;tax
+;loop_hires_inner
+;__auto_hires
+	;sta $9900,x
+	;inx
+	;bne loop_hires_inner
+	;inc __auto_hires+2
+	;dey
+	;bne loop_hires_outer
 
-	lda #30				; Write hires switch
-	sta $bfdf
+	;lda #30				; Write hires switch
+	;sta $bfdf
 
 	
 	; switch to ram overlay

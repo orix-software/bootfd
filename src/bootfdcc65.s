@@ -7,7 +7,7 @@
 
 _boot_microdisc = CODE+0
 .export	_boot_microdisc
-EndOfMemory = +20660
+EndOfMemory = +20636
 .export	EndOfMemory
 
 ;
@@ -16,11 +16,6 @@ EndOfMemory = +20660
 .segment	"CODE"
 CODE:
 	.byte	$78
-	.byte	$A9
-	.byte	$00
-	.byte	$8D
-	.byte	$21
-	.byte	$03
 	.byte	$A9
 	.byte	$60
 	.byte	$85
@@ -54,50 +49,26 @@ CODE:
 	.byte	$50
 	.byte	$C8
 	.byte	$CC
-	.byte	$B3
+	.byte	$9B
 	.byte	$00
 	.byte	$D0
 	.byte	$F5
 	.byte	$4C
 	.byte	$00
 	.byte	$50
-	.byte	$A0
-	.byte	$27
-	.byte	$A9
-	.byte	$00
-	.byte	$AA
-	.byte	$9D
-	.byte	$00
-	.byte	$99
-	.byte	$E8
-	.byte	$D0
-	.byte	$FA
-	.byte	$EE
-	.byte	$07
-	.byte	$50
-	.byte	$88
-	.byte	$D0
-	.byte	$F3
-	.byte	$A9
-	.byte	$1E
-	.byte	$8D
-	.byte	$DF
-	.byte	$BF
 	.byte	$20
-	.byte	$9B
+	.byte	$83
 	.byte	$50
 	.byte	$A0
 	.byte	$04
 	.byte	$8C
-	.byte	$B2
+	.byte	$9A
 	.byte	$50
 	.byte	$EA
 	.byte	$EA
 	.byte	$EA
 	.byte	$A2
 	.byte	$00
-	.byte	$EA
-	.byte	$EA
 	.byte	$EA
 	.byte	$EC
 	.byte	$11
@@ -182,21 +153,21 @@ CODE:
 	.byte	$F0
 	.byte	$05
 	.byte	$CE
-	.byte	$B2
+	.byte	$9A
 	.byte	$50
 	.byte	$D0
-	.byte	$A1
+	.byte	$A3
 	.byte	$EE
-	.byte	$49
+	.byte	$31
 	.byte	$50
 	.byte	$EE
-	.byte	$6B
+	.byte	$53
 	.byte	$50
 	.byte	$CE
-	.byte	$B1
+	.byte	$99
 	.byte	$50
 	.byte	$D0
-	.byte	$96
+	.byte	$98
 	.byte	$78
 	.byte	$A9
 	.byte	$81
@@ -222,7 +193,7 @@ CODE:
 	.byte	$10
 	.byte	$03
 	.byte	$20
-	.byte	$A8
+	.byte	$90
 	.byte	$50
 	.byte	$29
 	.byte	$10
