@@ -19,6 +19,32 @@ void usage()
   return;
 }
 
+unsigned char eprom[8192];
+
+
+extern void copy_eeprom();
+
+unsigned char read_load_microdisc_eprom()
+{
+  FILE *fp;
+
+  unsigned int nb;
+  fp=fopen("/usr/share/bootfd/microdis.rom","r");
+  if (fp==NULL)
+  {
+    printf("Can't open /usr/share/bootfd/mdisc.rom\n");
+    return 1;
+  }
+
+  nb=fread(eprom,1,8192,fp);
+
+  // Then copy now
+
+
+  fclose(fp);
+
+  
+}
 
 int main(int argc,char *argv[])
 {
@@ -39,7 +65,9 @@ int main(int argc,char *argv[])
     usage();
     return 1;
   }
-
+  read_load_microdisc_eprom();
+  copy_eeprom(eprom);
+  return 0;
   boot_microdisc();
   return 0;  
 	

@@ -38,11 +38,6 @@
 	*=$00
 #endif
 	
-
-	
-
-
-
 	.text
 
 	;
@@ -53,8 +48,6 @@
 	; Try to find the load address
 	;
 	sei               	; Disable interruptions
-	;lda #$00
-	;sta $321
 	
 	lda #OPCODE_RTS
 	sta $00          	; Write in $00 Page => take one less byte
@@ -97,29 +90,6 @@ _end_relocator_
      *=FINAL_ADRESS
 
 _BEGIN_
-	;
-	; Switch to HIRES
-	;
-
-	;ldy #39 			; From $9900 to $c000 is 39 pages (9984 bytes)
-	;lda #0
-;loop_hires_outer	
-	;tax
-;loop_hires_inner
-;__auto_hires
-	;sta $9900,x
-	;inx
-	;bne loop_hires_inner
-	;inc __auto_hires+2
-	;dey
-	;bne loop_hires_outer
-
-	;lda #30				; Write hires switch
-	;sta $bfdf
-
-	
-	; switch to ram overlay
-
 	
 	jsr restore_track0 
 
@@ -267,10 +237,10 @@ wait_completion
 _chk_310a
    rts 
 ;.data
-sector_counter		
-.byt 1
-retry_counter
-.dsb 1	; Number of attempts at loading data (ie: not quite clear what happens when this fails...)
+sector_counter:
+	.byt 1
+retry_counter:
+	.dsb 1	; Number of attempts at loading data (ie: not quite clear what happens when this fails...)
 
 _END_
 

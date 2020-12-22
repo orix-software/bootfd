@@ -1,0 +1,6 @@
+#! /bin/sh
+
+VERSION=1.0.1
+PROGRAM=bootfd
+echo "#define VERSION \"$VERSION\"" > src/version.h
+echo "bootfd    1.0.1  Boot the bootsector "  > src/ipkg/$PROGRAM.csv
