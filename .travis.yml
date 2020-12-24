@@ -6,6 +6,8 @@ before_install:
 after_success:
     - mkdir -p build/usr/src/bootfd/src/
     - mkdir -p build/usr/share/man/
+    - mkdir -p build/usr/share/bootfd/
+    - cp microdisc.rom build/usr/share/bootfd/
     - cp bootfd build/bin
     - cd build && tar -c * > ../bootfd.tar && cd ..
     - gzip bootfd.tar
