@@ -1,3 +1,12 @@
+
+Travis : 
+
+[![Build Status](https://travis-ci.org/orix-software/gootfd.svg?branch=master)](https://travis-ci.org/orix-software/bootfd)
+
+Github action : 
+
+![bootfd](https://github.com/orix-software/shell/workflows/bootfd/badge.svg)
+
 # bootfd
 
 bootfd is an Orix program to read bootsector on microdisc and start this boot sector.
