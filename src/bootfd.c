@@ -4,7 +4,7 @@
 
 #include "version.h"
 
-extern void boot_microdisc();
+//extern void boot_microdisc();
 
 void version()
 {
