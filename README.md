@@ -1,6 +1,4 @@
-![bootfd build status](https://github.com/orix-software/bootfd/workflows/.github/workflows/main.yml/badge.svg)
-
-
+![bootfd build status](https://github.com/orix-software/bootfd/workflows/build/badge.svg)
 
 # bootfd
 

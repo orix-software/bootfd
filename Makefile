@@ -1,7 +1,3 @@
-CC=cl65
-CO=co65
-AS=xa
-
 CFLAGS=-ttelestrat
 LDFILES=src/_copy_eeprom.asm
 
