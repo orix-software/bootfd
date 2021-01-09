@@ -1,7 +1,5 @@
 CFLAGS=-ttelestrat
 LDFILES=src/_copy_eeprom.asm
-
-
 PROGRAM=bootfd
 SOURCE=src/$(PROGRAM).c
 
@@ -24,13 +22,13 @@ endif
 project:
 	echo $(CC65_HOME)
 	ls $(CC65_HOME) -l
+	echo $(CC)
 	mkdir build/bin -p
 	mkdir build/usr/share/bootfd -p
 	$(CC) -o build/bin/$(PROGRAM) $(CFLAGS) $(SOURCE) $(LDFILES)
 	cp microdis.rom build/usr/share/bootfd
 
 test:
-
 	echo nothing
 
 
