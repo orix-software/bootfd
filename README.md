@@ -3,7 +3,7 @@ Travis :
 
 [![Build Status](https://travis-ci.org/orix-software/gootfd.svg?branch=master)](https://travis-ci.org/orix-software/bootfd)
 
-Github action : 
+Github action :
 
 ![bootfd](https://github.com/orix-software/shell/workflows/bootfd/badge.svg)
 
@@ -12,8 +12,7 @@ Github action :
 bootfd is an Orix program to read bootsector on microdisc and start this boot sector.
 
 launch : 
- * cd /usr/bin/
- * ./bootfd 
+  * bootfd 
 
 It reads boot sector and start it. It's useful to start demo on the oric from disc for example (barbitoric, asm2k2, etc). It does not work on real telestrat for some demo because these demo are coded without the microdisc bug corrected on telestrat
 
