@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <string.h>
+#include <peekpoke.h>
 
 #include "version.h"
 
-extern void boot_microdisc();
+//extern void boot_microdisc();
 
 void version()
 {
@@ -65,10 +66,16 @@ int main(int argc,char *argv[])
     usage();
     return 1;
   }
+  
+  if (PEEK(0x342)&15 <2) {
+    printf("It needs to have twilighte board firmware 2 to start\n");
+    return 1;
+
+  }
+    
+  
   read_load_microdisc_eprom();
   copy_eeprom(eprom);
   return 0;
-  boot_microdisc();
-  return 0;  
-	
+  	
 }

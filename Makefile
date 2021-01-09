@@ -1,22 +1,40 @@
-CC=cl65
-CO=co65
-AS=xa
-
 CFLAGS=-ttelestrat
-LDFILES=src/bootfdcc65.s src/_copy_eeprom.asm
-
+LDFILES=src/_copy_eeprom.asm
 PROGRAM=bootfd
 SOURCE=src/$(PROGRAM).c
 
 ASFLAGS=-R -v -cc 
 
-bootfd.o: src/boot-fd.asm
-	$(AS)  $(ASFLAGS) src/boot-fd.asm -o src/bootfd.o
-	$(CO) src/bootfd.o -o src/bootfdcc65.s
-	$(CC) -o $(PROGRAM) $(CFLAGS) $(SOURCE) $(LDFILES)
+
+ifeq ($(CC65_HOME),)
+	CL = cl65
+	AS = ca65
+	LD = ld65
+	AR = ar65
+else
+	CL = $(CC65_HOME)/bin/cl65
+	AS = $(CC65_HOME)/bin/ca65
+	LD = $(CC65_HOME)/bin/ld65
+	AR = $(CC65_HOME)/bin/ar65
+endif
+
+all: project docs
+.PHONY: docs project
+
+
+project:
+	echo $(CC65_HOME)
+	ls $(CC65_HOME) -l
+	echo $(CC)
+	mkdir build/bin -p
+	mkdir build/usr/share/bootfd -p
+	$(CL) -o build/bin/$(PROGRAM) $(CFLAGS) $(SOURCE) $(LDFILES)
+	cp microdis.rom build/usr/share/bootfd
 
 test:
-
 	echo nothing
 
 
+docs:
+	@echo -e "\nMake project $(PROJECT) man page\n"
+	@$(MAKE) -C docs
