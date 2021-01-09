@@ -23,6 +23,7 @@ endif
 
 project:
 	echo $(CC65_HOME)
+	ls $(CC65_HOME) -l
 	mkdir build/bin -p
 	mkdir build/usr/share/bootfd -p
 	$(CC) -o build/bin/$(PROGRAM) $(CFLAGS) $(SOURCE) $(LDFILES)
