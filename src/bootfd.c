@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include <PEEKPOKE.h>
+#include <peekpoke.h>
 
 #include "version.h"
 
