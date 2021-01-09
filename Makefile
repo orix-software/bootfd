@@ -5,7 +5,6 @@ SOURCE=src/$(PROGRAM).c
 
 ASFLAGS=-R -v -cc 
 
-all: project docs
 
 ifeq ($(CC65_HOME),)
 	CL = cl65
@@ -18,6 +17,10 @@ else
 	LD = $(CC65_HOME)/bin/ld65
 	AR = $(CC65_HOME)/bin/ar65
 endif
+
+all: project docs
+.PHONY: docs project
+
 
 project:
 	echo $(CC65_HOME)
