@@ -1,7 +1,6 @@
 CFLAGS=-ttelestrat
 LDFILES=src/_copy_eeprom.asm
 
-CC=cl65
 
 PROGRAM=bootfd
 SOURCE=src/$(PROGRAM).c
