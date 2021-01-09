@@ -22,7 +22,7 @@ else
 endif
 
 project:
-	echo $CC65_HOME
+	echo $(CC65_HOME)
 	mkdir build/bin -p
 	mkdir build/usr/share/bootfd -p
 	$(CC) -o build/bin/$(PROGRAM) $(CFLAGS) $(SOURCE) $(LDFILES)
