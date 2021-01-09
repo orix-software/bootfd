@@ -10,6 +10,8 @@ SOURCE=src/$(PROGRAM).c
 
 ASFLAGS=-R -v -cc 
 
+all: project docs
+
 ifeq ($(CC65_HOME),)
 	CC = cl65
 	AS = ca65
@@ -22,7 +24,7 @@ else
 	AR = $(CC65_HOME)/bin/ar65
 endif
 
-bootfd.o:
+project:
 
 	mkdir build/bin -p
 	mkdir build/usr/share/bootfd -p
@@ -34,3 +36,6 @@ test:
 	echo nothing
 
 
+docs:
+	@echo -e "\nMake project $(PROJECT) man page\n"
+	@$(MAKE) -C docs
